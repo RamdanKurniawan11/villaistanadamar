@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090a0b">
+<title>Villa Istana Damar — A Private Retreat in Cisarua</title>
+<meta name="description" content="Temukan pengalaman menginap privat di Villa Istana Damar, Cisarua, Bandung Barat. Pilih Ningrum Villa atau Wulan Villa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<style>
+:root{
+ --font-sans:"Space Grotesk",system-ui,sans-serif;--font-display:"Oswald",Impact,sans-serif;
+ --ease:cubic-bezier(.2,0,0,1);--accent:#c9a15b;--accent-strong:#d7b36f;
+ --bg:#090a0b;--bg-soft:#111315;--panel:#0d0f10;--panel-raised:#17191a;
+ --fg:#f2eee6;--muted:#a5a199;--muted-2:#77746d;--line:#49443b;--line-soft:rgba(201,161,91,.24);
+ --header-bg:rgba(9,10,11,.78);--shadow:0 24px 70px rgba(0,0,0,.28);
+}
+html[data-theme="light"]{
+ --bg:#f0eee8;--bg-soft:#e8e5dc;--panel:#f8f6f0;--panel-raised:#e5e1d6;
+ --fg:#171817;--muted:#625f58;--muted-2:#77736a;--line:#b8ae9b;--line-soft:rgba(126,91,38,.28);
+ --header-bg:rgba(240,238,232,.84);--shadow:0 24px 70px rgba(54,45,29,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans);overflow-x:hidden;transition:background .45s,color .45s}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}img{display:block;max-width:100%}
+::selection{background:var(--accent);color:#111}
+.display{font-family:var(--font-display);font-weight:700;text-transform:uppercase;line-height:.9;letter-spacing:-.035em}
+.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+.site-header{position:fixed;z-index:80;top:0;left:0;right:0;height:76px;padding:0 clamp(20px,4vw,58px);display:flex;align-items:center;justify-content:space-between;background:var(--header-bg);backdrop-filter:blur(18px);border-bottom:1px solid var(--line-soft);transition:background .4s,border .4s}
+.brand{display:flex;align-items:center;gap:12px;min-width:170px}
+.brand img{width:148px;height:48px;object-fit:contain;object-position:left center}
+.brand-fallback{font:600 19px var(--font-display);letter-spacing:.05em}
+.main-nav{display:flex;align-items:center;gap:clamp(18px,2.7vw,42px);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.main-nav a,.footer-nav a{position:relative;transition:color .25s}
+.main-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:var(--accent);transition:right .3s}
+.main-nav a:hover{color:var(--accent)}.main-nav a:hover:after{right:0}
+.header-actions{display:flex;align-items:center;gap:14px}
+.theme-toggle{width:42px;height:42px;border:1px solid var(--line);background:transparent;display:grid;place-items:center;cursor:pointer;transition:all .25s}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:rotate(12deg)}
+.theme-toggle svg{width:18px;height:18px}
+.header-book{font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:13px 18px;background:var(--accent);color:#111;font-weight:700;clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);transition:filter .2s}
+.header-book:hover{filter:brightness(1.12)}
+.menu-btn{display:none;border:0;background:none;font-size:24px;cursor:pointer}
+.mobile-menu{display:none}
+section{position:relative;scroll-margin-top:75px}
+.stack-shell{position:relative;background:var(--bg)}
+.stack-layer{position:sticky;top:0;min-height:100svh}
+.stack-layer.hero-layer{z-index:1}
+.stack-layer.collection-layer{z-index:2;min-height:100svh}
+.stack-inner{min-height:100svh;transform-origin:center;will-change:auto}
+.stack-shade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:20}
+.section-index{position:absolute;right:clamp(20px,4vw,58px);top:34px;font-size:10px;letter-spacing:.15em;color:var(--muted-2)}
+/* Hero */
+.hero{min-height:100svh;padding:110px clamp(24px,5.5vw,80px) 54px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:var(--bg)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 47px,var(--line-soft) 48px,transparent 49px),repeating-linear-gradient(90deg,transparent 0 47px,var(--line-soft) 48px,transparent 49px);opacity:.16;pointer-events:none;mask-image:linear-gradient(90deg,#000,transparent 90%)}
+.hero:after{content:"";position:absolute;width:52vw;height:52vw;border:1px solid var(--line-soft);border-radius:50%;right:-15vw;top:6vh;box-shadow:0 0 0 35px rgba(201,161,91,.025),0 0 0 75px rgba(201,161,91,.02);pointer-events:none}
+.hero-topline{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.hero-main{position:relative;z-index:3;display:grid;grid-template-columns:minmax(340px,.82fr) minmax(480px,1.18fr);align-items:center;gap:3vw;min-height:590px}
+.hero-copy{position:relative;z-index:5;padding:25px 0}
+.hero-kicker{margin-bottom:20px}
+.hero-title{font-size:clamp(66px,8.2vw,122px);margin:0;max-width:6.4em}
+.hero-title span{display:block}.hero-title .gold{color:var(--accent)}
+.hero-desc{font-size:clamp(14px,1.2vw,17px);line-height:1.6;color:var(--muted);max-width:400px;margin:27px 0 28px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn-primary,.btn-outline{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:0 22px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .25s}
+.btn-primary{background:var(--accent);color:#111;border:1px solid var(--accent)}
+.btn-primary:hover{background:var(--accent-strong);transform:translateY(-3px);box-shadow:0 10px 25px rgba(201,161,91,.2)}
+.btn-outline{border:1px solid var(--line);color:var(--fg);background:transparent}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+.hero-visual{position:relative;min-height:560px;height:min(70vh,700px);display:flex;align-items:center;justify-content:center}
+.hero-photo-frame{position:absolute;inset:3% 0 2% 4%;border:1px solid var(--accent);padding:10px;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,32px 100%,0 calc(100% - 32px));overflow:hidden}
+.hero-photo-frame:after{content:"";position:absolute;inset:10px;background:linear-gradient(90deg,rgba(0,0,0,.24),transparent 60%),linear-gradient(0deg,rgba(0,0,0,.48),transparent 45%);pointer-events:none}
+.hero-photo{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.83) saturate(.8);transform:scale(1.02);transition:transform 1.2s var(--ease),filter .5s}
+.hero:hover .hero-photo{transform:scale(1.06);filter:brightness(.92) saturate(.92)}
+.hero-image-caption{position:absolute;z-index:2;left:9%;bottom:9%;color:#fff;text-shadow:0 2px 12px #000}
+.hero-image-caption strong{display:block;font:600 clamp(24px,3vw,42px) var(--font-display);text-transform:uppercase}
+.hero-image-caption span{font-size:9px;letter-spacing:.2em}
+.hero-stamp{position:absolute;z-index:4;right:-14px;top:12%;width:112px;height:112px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--accent);font-size:9px;letter-spacing:.13em;text-transform:uppercase;background:var(--bg)}
+.hero-stamp b{font:500 27px var(--font-display);display:block}
+.hero-bottom{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-top:1px solid var(--line);padding-top:18px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.scroll-cue{display:flex;align-items:center;gap:12px}.scroll-cue:before{content:"";width:42px;height:1px;background:var(--accent)}
+/* Collection */
+.collection{min-height:100svh;background:var(--bg);padding:120px clamp(22px,5vw,72px) 70px;overflow:hidden}
+.collection:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 30%,rgba(201,161,91,.07),transparent 42%);pointer-events:none}
+.collection-head{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:35px}
+.collection-title{font-size:clamp(48px,6vw,82px);margin:0}
+.collection-title span{color:var(--accent)}
+.collection-intro{max-width:330px;font-size:13px;line-height:1.6;color:var(--muted);margin:0 0 5px}
+.villa-switch{display:flex;gap:6px;margin-bottom:25px;position:relative;z-index:2}
+.villa-tab{border:1px solid var(--line);background:transparent;padding:12px 22px;min-width:150px;text-align:left;cursor:pointer;transition:all .25s}
+.villa-tab small{display:block;font-size:8px;letter-spacing:.16em;color:var(--muted);margin-bottom:5px}
+.villa-tab strong{font:500 20px var(--font-display);text-transform:uppercase}
+.villa-tab.active{background:var(--accent);border-color:var(--accent);color:#111}
+.villa-tab.active small{color:#4b3920}
+.villa-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(300px,.78fr) minmax(480px,1.22fr);gap:clamp(28px,5vw,76px);align-items:stretch}
+.villa-info{display:flex;flex-direction:column;min-height:490px;padding:8px 0}
+.villa-overline{font-size:10px;letter-spacing:.17em;color:var(--accent);text-transform:uppercase}
+.villa-name{font:600 clamp(42px,5vw,68px)/.92 var(--font-display);text-transform:uppercase;margin:15px 0 12px}
+.villa-description{font-size:13px;line-height:1.65;color:var(--muted);max-width:430px;margin:0 0 24px}
+.villa-stats{display:flex;gap:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;margin-bottom:19px}
+.villa-stats strong{font:500 30px/.9 var(--font-display);display:block}
+.villa-stats span{display:block;color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:7px}
+.facility-title{font-size:9px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin:0 0 12px}
+.facility-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:0;padding:0;list-style:none}
+.facility-list li{font-size:11px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.facility-list li:before{content:"+";color:var(--accent);font-size:14px;line-height:10px}
+.villa-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto;padding-top:25px}
+.villa-actions .btn-primary,.villa-actions .btn-outline{min-height:43px;padding:0 14px;font-size:9px}
+.villa-gallery{position:relative;min-height:520px;border:1px solid var(--line);padding:9px;clip-path:polygon(0 0,calc(100% - 25px) 0,100% 25px,100% 100%,25px 100%,0 calc(100% - 25px));background:var(--panel)}
+.gallery-stage{position:relative;width:100%;height:100%;min-height:470px;overflow:hidden;background:var(--panel-raised)}
+.gallery-stage img{width:100%;height:100%;min-height:470px;position:absolute;inset:0;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .8s,transform 4.8s linear,filter .5s;filter:brightness(.84)}
+.gallery-stage img.active{opacity:1;transform:scale(1);z-index:1}
+.gallery-overlay{position:absolute;z-index:2;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none}
+.gallery-caption{position:absolute;z-index:3;left:24px;right:24px;bottom:22px;display:flex;justify-content:space-between;align-items:flex-end;color:#fff}
+.gallery-caption strong{font:500 24px var(--font-display);text-transform:uppercase}
+.gallery-caption span{font-size:9px;letter-spacing:.12em}
+.gallery-controls{position:absolute;z-index:4;right:20px;top:20px;display:flex;gap:7px}
+.gallery-arrow{width:40px;height:40px;border:1px solid rgba(255,255,255,.55);background:rgba(0,0,0,.24);color:#fff;cursor:pointer;backdrop-filter:blur(8px);transition:all .2s}
+.gallery-arrow:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+.gallery-progress{position:absolute;z-index:4;left:20px;right:20px;bottom:12px;height:2px;background:rgba(255,255,255,.35)}
+.gallery-progress span{display:block;width:0;height:100%;background:var(--accent)}
+/* Experience timeline */
+.experience{background:var(--bg);padding:110px clamp(20px,5vw,72px) 90px;overflow:hidden}
+.experience-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:55px}
+.experience-title{font-size:clamp(48px,6.2vw,88px);margin:0}
+.experience-title span{color:var(--accent)}
+.experience-intro{max-width:300px;font-size:12px;line-height:1.6;color:var(--muted)}
+.timeline-list{position:relative;max-width:1180px;margin:0 auto}
+.timeline-rail{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--line);transform:translateX(-50%)}
+.timeline-progress{position:absolute;top:0;left:0;width:100%;height:0;background:var(--accent);transform-origin:top}
+.timeline-row{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,110px);align-items:center;min-height:270px;padding:20px 0}
+.timeline-image{width:100%;max-width:500px;justify-self:end;position:relative;border:1px solid var(--line);padding:8px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));transition:padding .6s var(--ease)}
+.timeline-image img{width:100%;aspect-ratio:1.4;object-fit:cover;filter:saturate(.82);transition:transform .8s var(--ease),filter .4s}
+.timeline-row:hover .timeline-image{padding:2px}.timeline-row:hover .timeline-image img{transform:scale(1.025);filter:saturate(1)}
+.timeline-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:420px}
+.timeline-row:nth-child(even) .timeline-image{grid-column:2;grid-row:1;justify-self:start}
+.timeline-row:nth-child(even) .timeline-copy{grid-column:1;grid-row:1;text-align:right;align-items:flex-end;justify-self:end}
+.timeline-year{font:500 clamp(38px,4vw,56px)/.9 var(--font-display);color:var(--accent);margin:0}
+.timeline-label{font-size:17px;font-weight:700;text-transform:uppercase}
+.timeline-desc{font-size:12px;line-height:1.6;color:var(--muted);text-transform:uppercase;max-width:340px;margin:0}
+.timeline-marker{position:absolute;left:50%;top:50%;width:10px;height:10px;background:var(--accent);border:2px solid var(--bg);transform:translate(-50%,-50%) rotate(45deg)}
+/* Beyond the stay */
+.beyond{min-height:880px;background:var(--bg-soft);padding:110px clamp(20px,4vw,58px) 180px;overflow:hidden}
+.beyond:before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(ellipse at 10% 20%,transparent 0 35px,var(--line-soft) 36px,transparent 37px);opacity:.35;pointer-events:none}
+.beyond-head{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:25px}
+.beyond-title{font-size:clamp(54px,6.6vw,94px);margin:0}
+.beyond-title span{color:var(--accent)}
+.beyond-caption{max-width:300px;font-size:12px;line-height:1.6;color:var(--muted);margin-top:12px}
+.beyond-main{position:relative;z-index:2;display:grid;grid-template-columns:300px minmax(0,1fr);gap:30px;align-items:end;margin-top:28px}
+.beyond-copy{padding-bottom:65px}
+.beyond-copy .eyebrow{margin-bottom:14px}
+.beyond-copy h3{font:600 38px/.95 var(--font-display);text-transform:uppercase;margin:0 0 16px}
+.beyond-copy p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 24px}
+.beyond-photo{height:530px;position:relative;border:1px solid var(--accent);padding:9px;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px))}
+.beyond-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(.78) saturate(.8)}
+.beyond-photo:after{content:"A PRIVATE RETREAT";position:absolute;left:28px;bottom:28px;color:#fff;font:600 38px var(--font-display);text-shadow:0 2px 15px #000}
+.highlight-band{position:absolute;z-index:3;left:0;right:0;bottom:0;min-height:165px;background:var(--panel);padding:24px clamp(20px,4vw,58px) 28px;border-top:1px solid var(--line)}
+.highlight-top{display:flex;justify-content:space-between;margin-bottom:22px}
+.highlight-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.highlight-item{border-top:1px solid var(--line);padding-top:14px}
+.highlight-item small{font-size:9px;color:var(--accent)}
+.highlight-item strong{display:block;font:500 17px var(--font-display);text-transform:uppercase;margin:8px 0}
+.highlight-item span{font-size:10px;color:var(--muted)}
+/* Trust */
+.trust{background:var(--bg);padding:110px clamp(20px,4vw,58px) 70px;overflow:hidden}
+.trust-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:36px}
+.trust-title{font-size:clamp(46px,5.7vw,82px);margin:0}
+.trust-title span{color:var(--accent)}
+.trust-sub{font-size:12px;line-height:1.6;color:var(--muted);max-width:320px}
+.trust-main{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+.testimonial-feature{min-height:440px;border:1px solid var(--line);padding:30px;position:relative;display:flex;flex-direction:column;justify-content:space-between;background:var(--panel)}
+.testimonial-feature:before,.testimonial-feature:after{content:"";position:absolute;width:22px;height:22px;border-color:var(--accent);border-style:solid}
+.testimonial-feature:before{top:-1px;left:-1px;border-width:1px 0 0 1px}.testimonial-feature:after{right:-1px;bottom:-1px;border-width:0 1px 1px 0}
+.testimonial-top{display:flex;align-items:center;gap:14px}
+.avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;border:1px solid var(--accent)}
+.testimonial-person strong{display:block;font-size:14px}.testimonial-person span{font-size:10px;color:var(--muted)}
+.stars{color:#d6a84e;letter-spacing:3px;font-size:15px;margin-top:5px}
+.testimonial-quote{font:500 clamp(25px,3vw,40px)/1.2 var(--font-display);text-transform:uppercase;max-width:700px;margin:32px 0}
+.testimonial-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:18px;font-size:10px;color:var(--muted)}
+.testimonial-controls{display:flex;align-items:center;gap:12px}
+.testimonial-controls button{width:34px;height:34px;border:1px solid var(--line);background:transparent;cursor:pointer}
+.testimonial-controls button:hover{border-color:var(--accent);color:var(--accent)}
+.trust-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:440px}
+.trust-gallery img{width:100%;height:100%;min-height:210px;object-fit:cover;border:1px solid var(--line);filter:saturate(.8);transition:filter .4s,transform .7s}
+.trust-gallery img:hover{filter:saturate(1);transform:scale(.985)}
+.trust-gallery img:last-child{grid-column:1/3}
+.google-proof{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--line);padding:18px 22px;margin-top:24px;background:var(--panel)}
+.google-mark{font-size:25px;font-weight:700;background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0);background-clip:text;color:transparent}
+.google-copy{flex:1}.google-copy strong{font:500 22px var(--font-display);display:block}.google-copy span{font-size:10px;color:var(--muted)}
+.google-placeholder{font-size:10px;color:var(--muted);text-align:right;max-width:220px}
+.trust-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.trust-item{display:flex;gap:11px;align-items:flex-start}.trust-icon{width:34px;height:34px;border:1px solid var(--line);display:grid;place-items:center;color:var(--accent);flex:none;font-size:16px}
+.trust-item strong{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.trust-item span{display:block;font-size:9px;line-height:1.5;color:var(--muted);margin-top:5px}
+/* Footer */
+.final-cta{background:var(--accent);padding:14px;min-height:780px}
+.footer-panel{position:relative;min-height:752px;background:var(--bg);overflow:hidden;padding:36px clamp(24px,4vw,58px);border:1px solid rgba(0,0,0,.18)}
+.footer-panel:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 47px,var(--line-soft) 48px,transparent 49px),repeating-linear-gradient(90deg,transparent 0 47px,var(--line-soft) 48px,transparent 49px);opacity:.25;pointer-events:none}
+.footer-top{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{width:150px;height:54px;object-fit:contain;object-position:left center}
+.footer-section-label{font-size:9px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.footer-main{position:relative;z-index:2;display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center;min-height:530px}
+.footer-copy h2{font-size:clamp(58px,7vw,100px);margin:0 0 25px}
+.footer-copy h2 span{color:var(--accent)}
+.footer-copy p{font-size:13px;line-height:1.6;color:var(--muted);max-width:380px}
+.footer-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.footer-photo{height:500px;position:relative;border:1px solid var(--accent);padding:9px;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px))}
+.footer-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(.75) saturate(.82)}
+.footer-photo figcaption{position:absolute;left:26px;bottom:25px;color:#fff;font:500 30px var(--font-display);text-transform:uppercase;text-shadow:0 2px 15px #000}
+.footer-bottom{position:relative;z-index:4;border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:9px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.footer-nav{display:flex;gap:20px;flex-wrap:wrap}.footer-nav a:hover{color:var(--accent)}
+/* Dialogs, reveal and motion */
+.modal{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.86);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}.modal-box{width:min(900px,100%);background:#080909;border:1px solid var(--accent);padding:10px;position:relative}
+.modal-box video{width:100%;max-height:75vh;display:block;background:#000}
+.modal-close{position:absolute;right:-12px;top:-16px;width:36px;height:36px;border:1px solid var(--accent);background:#111;color:#fff;border-radius:50%;cursor:pointer}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+[data-theme="light"] .hero-photo-frame:after{background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 60%),linear-gradient(0deg,rgba(0,0,0,.42),transparent 45%)}
+[data-theme="light"] .gallery-stage img{filter:brightness(.94)}
+[data-theme="light"] .beyond-photo img,[data-theme="light"] .footer-photo img{filter:brightness(.9) saturate(.9)}
+@media(max-width:1050px){
+ .main-nav{gap:15px}.brand{min-width:140px}.brand img{width:130px}
+ .hero-main{grid-template-columns:.9fr 1.1fr}.hero-title{font-size:clamp(62px,8vw,92px)}
+ .villa-layout{grid-template-columns:.85fr 1.15fr;gap:28px}
+ .beyond-main{grid-template-columns:250px 1fr}
+}
+@media(max-width:800px){
+ .site-header{height:66px}.main-nav,.header-book{display:none}.menu-btn{display:block}
+ .mobile-menu{display:flex;position:fixed;z-index:75;inset:66px 0 0;background:var(--bg);padding:34px 26px;flex-direction:column;gap:24px;transform:translateX(100%);transition:transform .35s var(--ease)}
+ .mobile-menu.open{transform:none}.mobile-menu a{font:600 36px var(--font-display);text-transform:uppercase}
+ .hero{padding:95px 24px 30px;min-height:900px}
+ .hero-main{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+ .hero-copy{padding:18px 0 0}.hero-title{font-size:clamp(62px,14vw,92px)}
+ .hero-visual{height:420px;min-height:360px;margin-top:0}.hero-photo-frame{inset:4% 2% 5% 0}
+ .hero-stamp{width:86px;height:86px;right:-5px;top:2%;font-size:7px}.hero-stamp b{font-size:22px}
+ .hero-bottom{margin-top:15px;align-items:flex-start;flex-direction:column}
+ .collection,.experience,.trust{padding:95px 22px 55px}
+ .collection-head,.experience-head,.trust-head,.beyond-head{display:block}
+ .collection-intro,.experience-intro,.trust-sub,.beyond-caption{margin-top:18px}
+ .villa-switch{margin-top:25px}.villa-tab{min-width:0;flex:1;padding:10px 13px}
+ .villa-layout{display:flex;flex-direction:column}.villa-info{min-height:0}.villa-actions{margin-top:0}
+ .villa-gallery{min-height:380px}.gallery-stage,.gallery-stage img{min-height:360px}
+ .timeline-rail{left:12px}.timeline-row{grid-template-columns:1fr;gap:18px;padding:24px 0 35px 34px;min-height:0}
+ .timeline-image,.timeline-row:nth-child(even) .timeline-image{grid-column:1;grid-row:1;justify-self:stretch;max-width:none}
+ .timeline-copy,.timeline-row:nth-child(even) .timeline-copy{grid-column:1;grid-row:2;text-align:left;align-items:flex-start;justify-self:stretch}
+ .timeline-marker{left:12px;top:50px}
+ .beyond{padding:95px 22px 420px;min-height:1120px}
+ .beyond-main{display:flex;flex-direction:column-reverse;align-items:stretch}.beyond-photo{height:390px}.beyond-copy{padding:0}
+ .highlight-band{min-height:390px;padding:20px 22px}
+ .highlight-grid{grid-template-columns:1fr 1fr;gap:12px 20px}.highlight-item strong{font-size:15px}
+ .trust-main{grid-template-columns:1fr}.testimonial-feature{min-height:400px;padding:22px}
+ .trust-gallery{min-height:310px;grid-template-rows:145px 145px}.trust-gallery img{min-height:145px}
+ .google-proof{align-items:flex-start;flex-wrap:wrap}.google-placeholder{text-align:left;max-width:none}
+ .trust-strip{grid-template-columns:1fr 1fr;gap:18px}
+ .final-cta{padding:8px;min-height:0}.footer-panel{min-height:0;padding:24px 18px}
+ .footer-top{align-items:flex-start}.footer-logo{width:125px}
+ .footer-main{display:flex;flex-direction:column;align-items:stretch;padding:55px 0 35px;min-height:0}
+ .footer-copy h2{font-size:clamp(58px,14vw,84px)}.footer-photo{height:360px}
+ .footer-bottom{align-items:flex-start;flex-direction:column}.footer-nav{gap:14px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+ <a class="brand" href="#home" aria-label="Villa Istana Damar home"><img src="assets/logo-with-text.png" alt="Villa Istana Damar" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-fallback" style="display:none">VILLA ISTANA DAMAR</span></a>
+ <nav class="main-nav" aria-label="Navigasi utama">
+  <a href="#villas">The Villas</a><a href="#experience">Experience</a><a href="#beyond">Highlights</a><a href="#trust">Guest Stories</a>
+ </nav>
+ <div class="header-actions">
+  <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme" title="Toggle light / dark theme">
+   <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+  </button>
+  <a class="header-book" href="booking.html">Book Your Stay ↗</a>
+  <a class="header-book" href="admin/admin-login.html">Login</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+ </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Navigasi mobile">
+ <a href="#villas">The Villas</a><a href="#experience">Experience</a><a href="#beyond">Highlights</a><a href="#trust">Guest Stories</a><a href="#booking">Booking</a>
+</nav>
+
+<main>
+<div class="stack-shell" id="stack">
+ <div class="stack-layer hero-layer">
+  <div class="stack-inner">
+<section class="hero" id="home">
+ <div class="hero-topline"><span>VILLA COLLECTION / CISARUA</span><span>PRIVATE RETREAT · WEST JAVA</span></div>
+ <div class="hero-main">
+  <div class="hero-copy">
+   <div class="eyebrow hero-kicker">A private escape in Bandung Barat</div>
+   <h1 class="display hero-title"><span>Villa Istana</span><span class="gold">Damar.</span></h1>
+   <p class="hero-desc">Temukan ruang untuk beristirahat, menikmati waktu bersama, dan menciptakan momen berharga di tengah suasana Cisarua yang menenangkan.</p>
+   <div class="hero-meta"><span>18 Private Units</span><span>Ningrum & Wulan Collection</span><span>Jambudipa · Cisarua</span></div>
+   <div class="hero-ctas"><a class="btn-primary" href="#villas">Explore The Villas <span>↗</span></a><a class="btn-outline" href="#booking">Make a Reservation</a></div>
+  </div>
+  <div class="hero-visual">
+   <div class="hero-photo-frame"><img class="hero-photo" src="assets/01.jpg" alt="Tampilan luar Villa Istana Damar"></div>
+   <div class="hero-image-caption"><strong>A Private Retreat</strong><span>NATURAL BEAUTY · MODERN COMFORT</span></div>
+   <div class="hero-stamp"><div><b>18</b> PRIVATE<br>VILLA UNITS</div></div>
+  </div>
+ </div>
+ <div class="hero-bottom"><span>Villa Istana Damar / Jambudipa, Cisarua</span><span class="scroll-cue">Scroll to discover</span><span>01 / 06</span></div>
+</section>
+  </div>
+  <div class="stack-shade"></div>
+ </div>
+ <div class="stack-layer collection-layer">
+  <div class="stack-inner">
+<section class="collection" id="villas">
+ <span class="section-index">02 — THE VILLA COLLECTION</span>
+ <div class="collection-head reveal"><h2 class="display collection-title">Choose your<br><span>way to stay.</span></h2><p class="collection-intro">Dua koleksi villa dengan karakter berbeda, dirancang untuk menghadirkan kenyamanan dan ruang privat bagi setiap momen.</p></div>
+ <div class="villa-switch reveal">
+  <button class="villa-tab active" data-villa="ningrum"><small>01 / 09 UNITS</small><strong>Ningrum Villa</strong></button>
+  <button class="villa-tab" data-villa="wulan"><small>02 / 09 UNITS</small><strong>Wulan Villa</strong></button>
+ </div>
+ <div class="villa-layout">
+  <div class="villa-info reveal">
+   <div class="villa-overline" id="villaOverline">01 / NINGRUM COLLECTION</div>
+   <h2 class="villa-name" id="villaName">Ningrum Villa</h2>
+   <p class="villa-description" id="villaDescription">Pilihan villa privat yang nyaman untuk keluarga kecil atau perjalanan bersama orang terdekat. Tersedia pilihan unit dengan satu atau dua tempat tidur.</p>
+   <div class="villa-stats"><div><strong id="villaCapacity">2–4</strong><span>Guests</span></div><div><strong id="villaUnits">09</strong><span>Villa Units</span></div><div><strong id="villaBed">1–2</strong><span>Bed Options</span></div></div>
+   <p class="facility-title">Facilities & Comfort</p>
+   <ul class="facility-list" id="facilityList"><li>King-size bed</li><li>Modern bathroom</li><li>Hot shower & toiletries</li><li>Kitchenette</li><li>Refrigerator & microwave</li><li>Smart TV & Wi-Fi</li><li>Private parking</li><li>Jacuzzi on selected units</li></ul>
+   <div class="villa-actions">
+    <a class="btn-primary" id="villaBooking" href="booking.html">Book this villa ↗</a>
+    <button class="btn-outline" id="playVideo">▶ Play video</button>
+    <a class="btn-outline" href="#booking">Contact us</a>
+   </div>
+  </div>
+  <div class="villa-gallery reveal">
+   <div class="gallery-stage" id="galleryStage">
+    <img class="active" src="assets/007.jpg" alt="Ningrum Villa exterior">
+    <img src="assets/007.jpg" alt="Ningrum Villa garden">
+    <img src="assets/08.jpg" alt="Ningrum Villa living area">
+    <img src="assets/07.jpg" alt="Villa bathroom">
+    <img src="assets/0010.jpg" alt="Ningrum Villa living area">
+    <img src="assets/0011.jpg" alt="Ningrum Villa living area2">
+    <img src="assets/0013.jpg" alt="Ningrum Villa kitchen">
+    <img src="assets/0015.jpg" alt="Ningrum Villa kitchen 2">
+    <img src="assets/0017.jpg" alt="Ningrum Villa kitchen 2">
+    <img src="assets/0018.jpg" alt="Ningrum Villa kitchen 2">
+    <img src="assets/0019.jpg" alt="Ningrum Villa kitchen 2">
+    <div class="gallery-overlay"></div>
+    <div class="gallery-caption"><div><strong id="galleryTitle">Ningrum Villa</strong><span id="galleryCounter">01 / 05 · AUTO GALLERY</span></div><span>REAL PROPERTY PHOTOS</span></div>
+    <div class="gallery-controls"><button class="gallery-arrow" id="galleryPrev" aria-label="Previous photo">←</button><button class="gallery-arrow" id="galleryNext" aria-label="Next photo">→</button></div>
+    <div class="gallery-progress"><span id="galleryProgress"></span></div>
+   </div>
+  </div>
+ </div>
+</section>
+  </div>
+  <div class="stack-shade"></div>
+ </div>
+</div>
+
+<section class="experience" id="experience">
+ <span class="section-index">03 — THE EXPERIENCE</span>
+ <div class="experience-head reveal"><h2 class="display experience-title">A stay, in<br><span>every detail.</span></h2><p class="experience-intro">Ruang untuk beristirahat, menikmati waktu bersama, dan menemukan kenyamanan dalam setiap sudut villa.</p></div>
+ <div class="timeline-list">
+  <div class="timeline-rail"><div class="timeline-progress" id="timelineProgress"></div></div>
+  <article class="timeline-row reveal"><div class="timeline-image"><img src="assets/08.jpg" alt="Exterior Villa Istana Damar"></div><div class="timeline-copy"><h3 class="timeline-year">01</h3><div class="timeline-label">Arrive & Unwind</div><p class="timeline-desc">Sambutan suasana privat dengan arsitektur modern dan area luar yang memberi ruang untuk mulai beristirahat.</p></div><span class="timeline-marker"></span></article>
+  <article class="timeline-row reveal"><div class="timeline-image"><img src="assets/06.jpg" alt="Comfortable villa bedroom"></div><div class="timeline-copy"><h3 class="timeline-year">02</h3><div class="timeline-label">Rest in Comfort</div><p class="timeline-desc">Kamar tidur nyaman dengan king-size bed, dilengkapi kamar mandi modern dengan hot shower dan toiletries.</p></div><span class="timeline-marker"></span></article>
+  <article class="timeline-row reveal"><div class="timeline-image"><img src="assets/03.jpg" alt="Villa living room"></div><div class="timeline-copy"><h3 class="timeline-year">03</h3><div class="timeline-label">Feel at Home</div><p class="timeline-desc">Nikmati kitchenette, refrigerator, microwave, coffee & tea maker, serta living room dengan Smart TV dan Wi-Fi.</p></div><span class="timeline-marker"></span></article>
+  <article class="timeline-row reveal"><div class="timeline-image"><img src="assets/003.jpg" alt="Wulan Villa private pool"></div><div class="timeline-copy"><h3 class="timeline-year">04</h3><div class="timeline-label">Your Private Moment</div><p class="timeline-desc">Pilih pengalaman yang sesuai: private swimming pool di Wulan Villa atau jacuzzi pada unit Ningrum tertentu.</p></div><span class="timeline-marker"></span></article>
+ </div>
+</section>
+
+<section class="beyond" id="beyond">
+ <span class="section-index">04 — BEYOND THE STAY</span>
+ <div class="beyond-head reveal"><h2 class="display beyond-title">Beyond the<br><span>ordinary.</span></h2><p class="beyond-caption">More than a place to stay. A private space to slow down, reconnect, and enjoy the moment.</p></div>
+ <div class="beyond-main">
+  <div class="beyond-copy reveal"><div class="eyebrow">The experience / 01</div><h3>Make room<br>for what matters.</h3><p>Nikmati ruang privat untuk beristirahat dan menghabiskan waktu bersama.</p><a href="#villas" class="btn-primary">Explore the villas ↗</a></div>
+  <div class="beyond-photo reveal"><img src="assets/007.jpg" alt="Area luar dan jacuzzi Villa Istana Damar"></div>
+ </div>
+ <div class="highlight-band">
+  <div class="highlight-top"><span class="eyebrow">Villa Highlights</span><span class="eyebrow">The details that matter</span></div>
+  <div class="highlight-grid">
+   <div class="highlight-item"><small>01</small><strong>Private Pool</strong><span>Wulan Villa</span></div>
+   <div class="highlight-item"><small>02</small><strong>Jacuzzi</strong><span>Selected Ningrum units</span></div>
+   <div class="highlight-item"><small>03</small><strong>Kitchenette</strong><span>Comfort at your pace</span></div>
+   <div class="highlight-item"><small>04</small><strong>High-speed Wi-Fi</strong><span>Stay connected</span></div>
+   <div class="highlight-item"><small>05</small><strong>Private Parking</strong><span>Convenient access</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="trust" id="trust">
+ <span class="section-index">05 — TRUST & STORIES</span>
+ <div class="trust-head reveal"><h2 class="display trust-title">Trust is built.<br><span>Experiences are shared.</span></h2><p class="trust-sub">Cerita dan pengalaman tamu membantu calon pengunjung mengenal Villa Istana Damar dengan lebih dekat.</p></div>
+ <div class="trust-main" style="max-height: 480px;">
+  <article class="testimonial-feature reveal">
+   <div class="testimonial-top"><img class="avatar" id="reviewAvatar" src="assets/07.jpg" alt="Foto profil tamu dummy"><div class="testimonial-person"><strong id="reviewName">Sari Wulandari</strong><span id="reviewMeta">Guest experience · Wulan Villa</span><div class="stars" aria-label="5 out of 5 stars">★★★★★</div></div></div>
+   <blockquote class="testimonial-quote" id="reviewText">“Villa-nya sangat nyaman, bersih, dan sesuai dengan foto. Kolam renangnya private, anak-anak sangat senang. Suasana malamnya juga tenang dan sejuk. Pasti akan kembali lagi!”</blockquote>
+   <div class="testimonial-foot"><span id="reviewDate">Contoh ulasan · Materi dummy</span><div class="testimonial-controls"><button id="reviewPrev" aria-label="Previous review">←</button><span id="reviewCount">01 / 03</span><button id="reviewNext" aria-label="Next review">→</button></div></div>
+  </article>
+  <div class="trust-gallery reveal"><img src="assets/0020.jpg" alt="Living room"><img src="assets/05.jpg" alt="Private pool"><img src="assets/0022.jpg" alt="Villa exterior"></div>
+ </div>
+ <div class="google-proof reveal"><div class="google-mark">G</div><div class="google-copy"><strong>Google Business Profile</strong><span>Temukan profil resmi dan baca ulasan langsung dari sumbernya.</span></div><div class="google-placeholder">Tautan Google Business Profile akan dipasang setelah URL resmi diberikan.</div></div>
+ <div class="trust-strip">
+  <div class="trust-item"><div class="trust-icon">◇</div><div><strong>Secure & Safe</strong><span>Lingkungan aman dengan sistem keamanan 24 jam.</span></div></div>
+  <div class="trust-item"><div class="trust-icon">⌑</div><div><strong>Private Parking</strong><span>Area parkir untuk kenyamanan tamu.</span></div></div>
+  <div class="trust-item"><div class="trust-icon">↗</div><div><strong>Easy Booking</strong><span>Reservasi melalui WhatsApp atau platform booking.</span></div></div>
+  <div class="trust-item"><div class="trust-icon">☆</div><div><strong>Guest Reviews</strong><span>Ulasan autentik akan ditautkan ke profil resmi.</span></div></div>
+  <div class="trust-item"><div class="trust-icon">◎</div><div><strong>Real Guest Photos</strong><span>Foto asli properti dan pengalaman tamu.</span></div></div>
+ </div>
+ <p class="muted" style="font-size:9px;margin-top:18px">Catatan: contoh nama dan teks ulasan pada preview ini adalah dummy, bukan testimoni terverifikasi.</p>
+</section>
+
+<section class="final-cta" id="booking">
+ <div class="footer-panel">
+  <div class="footer-top"><img class="footer-logo" src="assets/logo-with-text.png" alt="Villa Istana Damar"><span class="footer-section-label">06 — Contact & Reservation</span></div>
+  <div class="footer-main">
+   <div class="footer-copy"><h2 class="display">Your stay<br>starts <span>here.</span></h2><p>Temukan ruang untuk beristirahat, menikmati waktu bersama, dan menciptakan momen berharga.</p><div class="footer-actions"><a class="btn-primary" id="footerBook" href="#" target="_blank" rel="noreferrer">Book your stay ↗</a><a class="btn-outline" id="footerContact" href="#" target="_blank" rel="noreferrer">Contact us</a></div><nav class="footer-nav" style="margin-top:40px"><a href="#villas">The Villas</a><a href="#experience">The Experience</a><a href="#trust">Guest Stories</a><a href="#home">Back to top ↑</a></nav></div>
+   <figure class="footer-photo"><img src="assets/009.jpg" alt="Exterior Villa Istana Damar"><figcaption>A private retreat</figcaption></figure>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Villa Istana Damar</span><span>Jl. Kolonel Masturi, Jambudipa, Cisarua, Bandung Barat</span><span>Instagram · WhatsApp · Google Maps</span></div>
+ </div>
+</section>
+</main>
+
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Villa video">
+ <div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close video">×</button><video id="villaVideo" controls playsinline preload="metadata" src="assets/villa-highlight.mp4"></video></div>
+</div>
+
+<script>
+/* Villa Istana Damar — interactive experience.
+   Original template-inspired behaviour retained: stacked section rhythm, scroll reveal,
+   timeline progress, pointer parallax and animated gallery transitions. */
+const $=(s,root=document)=>root.querySelector(s);
+const $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Light / dark theme toggle with persisted preference. */
+const themeToggle=$('#themeToggle'), themeIcon=$('#themeIcon');
+function setTheme(theme){
+ document.documentElement.dataset.theme=theme;
+ const light=theme==='light';
+ themeToggle.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');
+ themeIcon.innerHTML=light
+  ?'<path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/>'
+  :'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>';
+ localStorage.setItem('vid-theme',theme);
+}
+setTheme(localStorage.getItem('vid-theme')||'dark');
+themeToggle.addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+
+/* Native smooth anchor navigation (Lenis is loaded progressively if available). */
+let lenis=null;
+(async()=>{try{const m=await import('https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.mjs');lenis=new m.default({smoothWheel:true,lerp:.085});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const target=$(a.getAttribute('href'));if(target){e.preventDefault();lenis.scrollTo(target,{offset:-66,duration:1.15});}}));}catch(e){console.info('Lenis unavailable; native smooth scroll remains active.')}})();
+
+/* Header mobile menu */
+const menuBtn=$('#menuBtn'),mobileMenu=$('#mobileMenu');
+menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('open');menuBtn.textContent=mobileMenu.classList.contains('open')?'×':'☰';});
+$$('a',mobileMenu).forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuBtn.textContent='☰';}));
+
+/* Villa data and automatic gallery. */
+const villaData={
+ ningrum:{
+  overline:'01 / NINGRUM COLLECTION',name:'Ningrum Villa',description:'Pilihan villa privat yang nyaman untuk keluarga kecil atau perjalanan bersama orang terdekat. Tersedia pilihan unit dengan satu atau dua tempat tidur.',
+  capacity:'2–4',units:'09',bed:'1–2',gallery:['007.jpg','07.jpg','0010.jpg','0011.jpg','0013.jpg','0015.jpg','0017.jpg','0018.jpg','0019.jpg','04.jpg'],
+  alts:['Ningrum Villa exterior','Garden area','Living room','Modern bathroom','Bedroom'],
+  facilities:['King-size bed','Modern bathroom','Hot shower & toiletries','Kitchenette','Refrigerator & microwave','Smart TV & Wi-Fi','Private parking','Jacuzzi on selected units']
+ },
+ wulan:{
+  overline:'02 / WULAN COLLECTION',name:'Wulan Villa',description:'Villa berukuran lebih luas untuk keluarga atau rombongan hingga delapan orang, dilengkapi private swimming pool untuk menikmati waktu bersama.',
+  capacity:'Up to 8',units:'09',bed:'King-size',gallery:['09.jpg','12.jpg','0016.jpg','002.jpg','03.jpg','004.jpg','009.jpg','008.jpg','001.jpg','003.jpg','10.jpg'],
+  alts:['Wulan Villa private pool','Outdoor dining area','Private jacuzzi area','Villa exterior','Bathroom','Poolside'],
+  facilities:['Capacity up to 8 guests','Private swimming pool','King-size bed','Modern bathroom','Hot shower & toiletries','Kitchenette','Smart TV & Wi-Fi','Private parking']
+ }
+};
+let currentVilla='ningrum',galleryIndex=0,galleryTimer=null,galleryStart=0,galleryDuration=5200;
+const stage=$('#galleryStage'),progress=$('#galleryProgress');
+function renderGallery(){
+ const data=villaData[currentVilla];
+ $$('.gallery-stage img',stage).forEach(img=>img.remove());
+ data.gallery.forEach((file,i)=>{const img=new Image();img.src='assets/'+file;img.alt=data.alts[i]||data.name;img.className=i===galleryIndex?'active':'';stage.insertBefore(img,$('.gallery-overlay',stage));});
+ $('#galleryTitle').textContent=data.name;
+ $('#galleryCounter').textContent=String(galleryIndex+1).padStart(2,'0')+' / '+String(data.gallery.length).padStart(2,'0')+' · AUTO GALLERY';
+ progress.style.transition='none';progress.style.width='0%';void progress.offsetWidth;progress.style.transition=`width ${galleryDuration}ms linear`;progress.style.width='100%';
+}
+function showGallery(index){const data=villaData[currentVilla];galleryIndex=(index+data.gallery.length)%data.gallery.length;renderGallery();restartGallery();}
+function restartGallery(){clearInterval(galleryTimer);galleryTimer=setInterval(()=>showGallery(galleryIndex+1),galleryDuration);}
+function setVilla(key){
+ currentVilla=key;galleryIndex=0;const data=villaData[key];
+ $('#villaOverline').textContent=data.overline;$('#villaName').textContent=data.name;$('#villaDescription').textContent=data.description;
+ $('#villaCapacity').textContent=data.capacity;$('#villaUnits').textContent=data.units;$('#villaBed').textContent=data.bed;
+ $('#facilityList').innerHTML=data.facilities.map(x=>'<li>'+x+'</li>').join('');
+ $$('.villa-tab').forEach(b=>b.classList.toggle('active',b.dataset.villa===key));
+ $('#villaBooking').textContent='Book '+data.name+' ↗';$('#galleryTitle').textContent=data.name;
+ renderGallery();restartGallery();
+}
+$$('.villa-tab').forEach(b=>b.addEventListener('click',()=>setVilla(b.dataset.villa)));
+$('#galleryPrev').addEventListener('click',()=>showGallery(galleryIndex-1));
+$('#galleryNext').addEventListener('click',()=>showGallery(galleryIndex+1));
+setVilla('ningrum');
+
+/* Pause the photo carousel when it is not visible to save battery and CPU. */
+const galleryObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)restartGallery();else clearInterval(galleryTimer);});},{threshold:.15});
+galleryObserver.observe(stage);
+
+/* Original-template-style sticky stack transition:
+   the hero recedes as the villa collection slides over it, then the collection
+   gives way to the experience timeline. */
+const stackLayers=$$('.stack-layer');
+function updateStack(){
+ stackLayers.slice(0,2).forEach((layer,i)=>{
+  const next=stackLayers[i+1] || $('#experience');
+  if(!next)return;
+  const p=Math.max(0,Math.min(1,1-next.getBoundingClientRect().top/(innerHeight||1)));
+  const inner=$('.stack-inner',layer),shade=$('.stack-shade',layer);
+  const shrink=innerWidth<640?0:.075;
+  inner.style.transform=p>0&&shrink?`scale(${1-shrink*p})`:'';
+  inner.style.willChange=p>0&&shrink?'transform':'auto';
+  shade.style.opacity=String(.48*p);
+  inner.style.visibility=p>=1?'hidden':'visible';
+ });
+}
+addEventListener('scroll',()=>{updateStack();updateTimeline();},{passive:true});
+addEventListener('resize',()=>{updateStack();updateTimeline();});
+updateStack();
+
+/* Timeline progress and section reveal. */
+const timeline=$('.timeline-list'),timelineProgress=$('#timelineProgress');
+function updateTimeline(){const r=timeline.getBoundingClientRect();const p=Math.max(0,Math.min(1,(innerHeight-r.top)/(r.height+innerHeight)));timelineProgress.style.height=(p*100)+'%';}
+updateTimeline();
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>revealObserver.observe(el));
+
+/* Hero photo subtle parallax, matching the original template's pointer response. */
+let px=0,py=0,tx=0,ty=0;
+addEventListener('pointermove',e=>{if(prefersReduced||innerWidth<900)return;tx=(e.clientX/innerWidth-.5)*10;ty=(e.clientY/innerHeight-.5)*8;},{passive:true});
+function parallax(){px+=(tx-px)*.06;py+=(ty-py)*.06;const img=$('.hero-photo');if(img)img.style.transform=`scale(1.04) translate(${px}px,${py}px)`;if(!prefersReduced)requestAnimationFrame(parallax);}
+if(!prefersReduced)requestAnimationFrame(parallax);
+
+/* Testimonials: illustrative dummy content until real guest reviews are supplied. */
+const reviews=[
+ {name:'Sari Wulandari',meta:'Guest experience · Wulan Villa',date:'Contoh ulasan · Materi dummy',avatar:'07.jpg',text:'“Villa-nya sangat nyaman, bersih, dan sesuai dengan foto. Kolam renangnya private, anak-anak sangat senang. Suasana malamnya juga tenang dan sejuk. Pasti akan kembali lagi!”'},
+ {name:'Andi Pratama',meta:'Guest experience · Ningrum Villa',date:'Contoh ulasan · Materi dummy',avatar:'03.jpg',text:'“Tempatnya nyaman, fasilitasnya lengkap dan jacuzzi-nya jadi favorit. Proses check-in mudah, staf ramah dan responsif. Cocok untuk liburan keluarga.”'},
+ {name:'Rina Mahmudah',meta:'Guest experience · Wulan Villa',date:'Contoh ulasan · Materi dummy',avatar:'11.jpg',text:'“Suasana villa terasa privat dan nyaman. Area-nya luas, cocok untuk berkumpul bersama keluarga. Kami menikmati waktu bersama di area kolam.”'}
+];
+let reviewIndex=0;
+function showReview(i){reviewIndex=(i+reviews.length)%reviews.length;const r=reviews[reviewIndex];$('#reviewName').textContent=r.name;$('#reviewMeta').textContent=r.meta;$('#reviewDate').textContent=r.date;$('#reviewAvatar').src='assets/'+r.avatar;$('#reviewText').textContent=r.text;$('#reviewCount').textContent=String(reviewIndex+1).padStart(2,'0')+' / '+String(reviews.length).padStart(2,'0');}
+$('#reviewPrev').addEventListener('click',()=>showReview(reviewIndex-1));$('#reviewNext').addEventListener('click',()=>showReview(reviewIndex+1));
+
+/* Video modal */
+const modal=$('#videoModal'),video=$('#villaVideo');
+$('#playVideo').addEventListener('click',()=>{modal.classList.add('open');video.play().catch(()=>{});});
+function closeVideo(){modal.classList.remove('open');video.pause();video.currentTime=0;}
+$('#modalClose').addEventListener('click',closeVideo);modal.addEventListener('click',e=>{if(e.target===modal)closeVideo();});addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo();});
+
+/* Booking links are intentionally editable placeholders until the real WhatsApp and booking URLs are provided. */
+const bookingConfig={whatsappNumber:'',whatsappMessage:'Halo Villa Istana Damar, saya ingin bertanya mengenai ketersediaan villa.',bookingUrl:''};
+const wa=bookingConfig.whatsappNumber
+ ? 'https://wa.me/'+bookingConfig.whatsappNumber.replace(/\\D/g,'')+'?text='+encodeURIComponent(bookingConfig.whatsappMessage)
+ : 'booking.html';
+$('#footerContact').href=wa;$('#footerBook').href=bookingConfig.bookingUrl||wa;
+if(!bookingConfig.whatsappNumber){$('#footerContact').title='Tambahkan nomor WhatsApp resmi pada bookingConfig di index.html';$('#footerBook').title='Tambahkan nomor WhatsApp resmi atau URL booking pada bookingConfig di index.html';}
+$('#year').textContent=new Date().getFullYear();
+
+/* Active navigation state based on the section in view. */
+const navSections=$$('main section[id]');
+const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){$$('.main-nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-35% 0px -55% 0px'});
+navSections.forEach(s=>navObserver.observe(s));
+</script>
+</body>
+</html>
